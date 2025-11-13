@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+
+.top-bar {
+    background-color: #2f2f2f;
+    padding: 10px 0;
+    position: fixed;           
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;            
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: "Helvetica", sans-serif;
+    font-size: 15px;
+    border: 1px solid white;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: white;
+    color: black;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px; 
+}
