@@ -270,3 +270,11 @@ body {
   padding-top: 90px; /* adjust if bar is taller/shorter */
 }
 
+/* ====== Word count display ====== */
+.word-count {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  text-align: right;
+}
+
