@@ -10,27 +10,107 @@
   <body>
     <header>
       <div class="top-bar">
-        <nav class="nav-menu">
-          <a href="index.html">Main</a>
-          <a href="issue.html">Issue</a>
-          <a href="solution.html">Solutions</a>
-          <a href="more.html">More</a>
-        </nav>
+        <div class="nav-wrapper">
+            <span></span>
+            <span></span>
+            <span></span>
+
+          <nav class="nav-menu">
+            <a href="index.html">Main</a>
+            <a href="issue.html">Issue</a>
+            <a href="solution.html">Solutions</a>
+            <a href="more.html">More</a>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main>
       <section id="main">
-        <h1>Introduction</h1>
+        <h1>Safer Cycling in San Luis Obispo</h1>
+
         <p class="placeholder">
-          Placeholder for introduction
+          Cycling, walking, and other forms of micromobility are central to how people move
+          around San Luis Obispo and the Cal Poly campus. Students, faculty, and local residents
+          use bikes, e-bikes, scooters, and walking routes every day to reach classes, housing,
+          jobs, and downtown destinations. These modes are often faster than walking, more
+          convenient than driving for short trips, and essential for people who do not own a car.
+        </p>
+
+        <p class="placeholder">
+          However, many of the paths and streets they rely on were never designed for such a
+          high volume of riders and pedestrians using the same space. Narrow painted bike lanes,
+          shared routes, and crowded campus walkways regularly force people into close
+          interaction, which can lead to near misses and serious collisions. Nationally, the
+          United States sees far higher cycling fatality rates than countries like the Netherlands,
+          Denmark, and Germany, where protected lanes and separated paths are standard.
+        </p>
+
+        <p class="placeholder">
+          San Luis Obispo reflects these broader trends. In 2014, the city reported an unusually
+          high rate of bicycle collisions for its size, and many more minor crashes and close calls
+          likely go unreported. The purpose of this project is to show that improving bicycle
+          infrastructure in SLO is not just a lifestyle choice—it is a matter of safety, equity, and
+          accessibility for everyone who depends on affordable, sustainable transportation.
+        </p>
+
+        <div class="list">
+          <div class="card">
+            <h3>What This Site Covers</h3>
+            <p class="placeholder">
+              This proposal:
+            </p>
+            <ul class="placeholder">
+              <li>Explains the safety and equity issues riders and pedestrians face.</li>
+              <li>Analyzes collision data, survey results, and on-the-ground conditions.</li>
+              <li>Outlines concrete, cost-effective infrastructure solutions.</li>
+              <li>Provides research and references for policymakers and community members.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Our Goal</h3>
+            <p class="placeholder">
+              To prove that current conditions in SLO and on the Cal Poly campus are not safe for
+              cyclists, and to offer practical, financially realistic steps toward a protected,
+              predictable network that works better for everyone who walks, rides, or drives through
+              the city.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer>
       © 2025 SLO Bike Infrastructure Project | Designed for Cal Poly Proposal
     </footer>
-    <script src="particles-attract.js"></script>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const topBar = document.querySelector('.top-bar');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        function onScroll() {
+          if (window.scrollY > 10) {
+            topBar.classList.add('scrolled');
+          } else {
+            topBar.classList.remove('scrolled');
+          }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        if (navToggle) {
+          navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open');
+          });
+        }
+      });
+    </script>
+
+    <script src="particles-attract.js"></script>
   </body>
 </html>

@@ -10,48 +10,91 @@
   <body>
     <header>
       <div class="top-bar">
-        <nav class="nav-menu">
-          <a href="index.html">Main</a>
-          <a href="issue.html">Issue</a>
-          <a href="solution.html" class="active">Solutions</a>
-          <a href="more.html">More</a>
-        </nav>
+        <div class="nav-wrapper">
+            <span></span>
+            <span></span>
+            <span></span>
+
+          <nav class="nav-menu">
+            <a href="index.html">Main</a>
+            <a href="issue.html">Issue</a>
+            <a href="solution.html">Solutions</a>
+            <a href="more.html">More</a>
+          </nav>
+        </div>
       </div>
     </header>
 
     <main>
       <section>
         <h1>Proposed Solutions</h1>
+
         <p class="placeholder">
-          Placeholder
+          This proposal focuses on building safer places to ride rather than simply enforcing bicycle
+          laws more aggressively. Expanding enforcement would be expensive and difficult to sustain,
+          requiring new training, additional officers, and ongoing annual costs. By contrast, well-designed
+          infrastructure is a one-time investment that can protect riders and pedestrians for years with
+          relatively low maintenance.
         </p>
 
         <div class="list">
           <div class="card">
-            <h3>placeholder</h3>
+            <h3>1. Build Protected Class I Bikeways on Campus</h3>
             <p class="placeholder">
-              Placeholder
+              Using the California Highway Design Manual as a guide, we recommend constructing
+              Class I bikeways in locations where interactions with vehicles and pedestrians should be
+              minimized—exactly the conditions found on parts of the Cal Poly campus. High-traffic
+              areas like the main promenade and the surroundings of Kennedy Library see dense flows of
+              both walkers and riders, yet currently offer little physical separation or protection. A
+              protected, two-way bikeway would organize movement and reduce conflicts in these
+              hotspots.
             </p>
           </div>
 
           <div class="card">
-            <h3>placeholder</h3>
+            <h3>2. Invest in a Promenade Pilot Segment</h3>
             <p class="placeholder">
-              Placeholder
+              As a concrete first step, the project proposes rebuilding a roughly 500-foot section of the
+              campus promenade as a raised, protected cycling track. Based on cost estimates from
+              similar projects adjusted for local labor rates, this segment would cost about $170,000 to
+              construct. For a university the size of Cal Poly, this is a relatively small share of the overall
+              budget but could dramatically improve safety along one of the most heavily used corridors.
             </p>
           </div>
 
           <div class="card">
-            <h3>placeholder</h3>
+            <h3>3. Extend a Safe Commuter Network</h3>
             <p class="placeholder">
-              Placeholder
+              Beyond campus borders, many students live in neighborhoods to the south, east, and west,
+              traveling along major streets that currently lack safe, separated bike facilities. Over time,
+              the city and campus should build Class I bikeways on key commuter routes—such as
+              Foothill, California, and Monterey—starting with the most dangerous segments identified
+              in crash and near-miss data. The long-term vision is a connected “bicycle highway”
+              system that links neighborhoods directly to campus and downtown.
             </p>
           </div>
 
           <div class="card">
-            <h3>Placeholder</h3>
+            <h3>4. Create a Crash &amp; Near-Miss Reporting System</h3>
             <p class="placeholder">
-                Placeholder
+              To decide where to invest first, Cal Poly and the city should implement a simple, online
+              reporting tool that lets people log crashes and near misses on a map. Research around
+              other university campuses shows that crowdsourced reporting captures many incidents that
+              never appear in police statistics, especially minor collisions and falls that still signal
+              dangerous locations. A campus-focused map or app would highlight “hotspots” and guide
+              phased construction of new facilities.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>5. Treat Bike Infrastructure as a Long-Term Investment</h3>
+            <p class="placeholder">
+              Economic studies of bicycle facilities consistently find that the benefits of safer cycling
+              infrastructure outweigh the costs, especially in places that have not yet invested heavily in
+              bike networks. Benefits include improved mobility, increased physical activity, health-care
+              savings, fewer crashes, reduced congestion and pollution, and better neighborhood
+              livability. Even modest projects, like a $170,000 protected path, can pay off over time
+              when these wider impacts are considered.
             </p>
           </div>
         </div>
@@ -61,6 +104,33 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const topBar = document.querySelector('.top-bar');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        function onScroll() {
+          if (window.scrollY > 10) {
+            topBar.classList.add('scrolled');
+          } else {
+            topBar.classList.remove('scrolled');
+          }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        if (navToggle) {
+          navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open');
+          });
+        }
+      });
+    </script>
+
     <script src="particles-attract.js"></script>
   </body>
 </html>

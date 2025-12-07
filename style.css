@@ -2,9 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 /* ====== Global ====== */
+html,
 body {
   margin: 0;
-  padding-top: 80px;
+  padding: 0;
+  overflow-x: hidden; /* no horizontal scrollbars */
+}
+
+body {
+  /* Height of header (~70px) + extra spacing */
+  padding-top: 110px;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #e6f0ff 0%, #fdfdfd 100%);
   color: #2f2f2f;
@@ -28,11 +35,15 @@ section {
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   max-width: 1000px;
-  transition: transform 0.3s ease;
+
+  /* keep sections visually under the nav bar */
+  position: relative;
+  z-index: 1;
 }
 
+/* remove the lift-on-hover that could push sections into the header */
 section:hover {
-  transform: translateY(-3px);
+  transform: none;
 }
 
 section h2 {
@@ -53,20 +64,40 @@ section h2 {
 }
 
 /* ====== Navigation Bar ====== */
-.top-bar {
-  background: linear-gradient(90deg, #202020, #363636);
-  padding: 15px 0;
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999 !important; /* Make sure header is above everything */
+}
+
+.top-bar {
+  background: linear-gradient(90deg, #202020, #363636);
+  padding: 15px 0;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
+/* flex wrapper for nav */
+.nav-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center nav links */
+}
+
+/* hide the old logo completely */
+.nav-logo {
+  display: none !important;
+}
+
+/* desktop menu */
 .nav-menu {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 35px;
 }
 
@@ -93,6 +124,24 @@ section h2 {
   border: 2px solid #2f2f2f;
 }
 
+/* hamburger (if you decide to use it on small screens) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+}
+
 /* ====== Cards ====== */
 .list {
   display: grid;
@@ -111,7 +160,7 @@ section h2 {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
@@ -145,10 +194,28 @@ footer span {
 }
 
 @media (max-width: 700px) {
+  .nav-wrapper {
+    justify-content: space-between;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 24px;
+    background: #202020;
+    padding: 12px 16px;
+    border-radius: 10px;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
   }
 
   section {
@@ -160,8 +227,7 @@ footer span {
   }
 }
 
-/* ===== Custom Cursor Styles ===== */
-/* ===== Sparkle Trail Effect ===== */
+/* ===== Sparkle / custom cursor from previous CSS (if still used) ===== */
 .sparkle {
   position: fixed;
   pointer-events: none;
@@ -187,3 +253,20 @@ footer span {
     opacity: 0;
   }
 }
+
+/* Force the header/top bar to stay fixed above the content & particles */
+body > header,
+header,
+.top-bar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999 !important;
+}
+
+/* Make sure the rest of the page starts below the bar */
+body {
+  padding-top: 90px; /* adjust if bar is taller/shorter */
+}
+

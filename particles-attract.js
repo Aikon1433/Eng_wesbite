@@ -40,10 +40,15 @@
       width: 100vw; height: 100vh;
       z-index: 0; pointer-events: none;
     }
-    /* Keep your nav/content above the canvas just in case */
-    body > *:not(#particle-field) { position: relative; z-index: 1; }
+
+    /* Keep everything above the particles — except the header */
+    body > *:not(#particle-field):not(header) {
+      position: relative;
+      z-index: 1;
+    }
   `;
   document.head.appendChild(style);
+
 
   let w = (canvas.width = window.innerWidth);
   let h = (canvas.height = window.innerHeight);

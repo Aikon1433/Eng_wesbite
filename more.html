@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>More | SLO Bike Infrastructure Proposal</title>
     <link rel="stylesheet" href="style.css" />
-
   </head>
 
   <body>
     <header>
       <div class="top-bar">
-        <nav class="nav-menu">
-          <a href="index.html">Main</a>
-          <a href="issue.html">Issue</a>
-          <a href="solution.html">Solutions</a>
-          <a href="more.html" class="active">More</a>
-        </nav>
+        <div class="nav-wrapper">
+            <span></span>
+            <span></span>
+            <span></span>
+
+          <nav class="nav-menu">
+            <a href="index.html">Main</a>
+            <a href="issue.html">Issue</a>
+            <a href="solution.html">Solutions</a>
+            <a href="more.html">More</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -24,23 +29,87 @@
       <section>
         <h1>Further Research &amp; References</h1>
         <p class="placeholder">
-          Placeholder
+          This section gathers the key studies, data sources, and local documents that inform the
+          proposal. These references can help policymakers, students, and community members explore
+          the evidence behind safer cycling infrastructure in more detail.
         </p>
 
         <div class="list">
           <div class="card">
             <h3>Articles &amp; Papers</h3>
             <ul class="placeholder">
+              <li>
+                Pucher, John, and Ralph Buehler. “Safer Cycling Through Improved Infrastructure.”
+                <em>American Journal of Public Health</em> 106.12 (2016): 2089–2091.
+                <br />
+                <a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2016.303507" target="_blank" rel="noopener noreferrer">
+                  American Public Health Association article
+                </a>
+              </li>
+              <li>
+                Medury, Aditya, et al. “Investigating the Underreporting of Pedestrian and Bicycle
+                Crashes in and Around University Campuses – A Crowdsourcing Approach.”
+                <em>Accident Analysis &amp; Prevention</em> 130 (2019): 99–107.
+              </li>
+              <li>
+                Krizec, Kevin J. “Estimating the Economic Benefits of Bicycling and Bicycle Facilities:
+                An Interpretive Review and Proposed Methods.” In <em>Essays on Transport Economics</em>,
+                ed. Pablo Coto-Millán and Vicente Inglada. Physica-Verlag, 2007.
+              </li>
+              <li>
+                Dill, Jennifer. “Bicycle Facility Cost” (Active Living Research / Portland State
+                University cost study).
+                <br />
+                <a href="https://activelivingresearch.org/sites/activelivingresearch.org/files/Dill_Bicycle_Facility_Cost_June2013.pdf"
+                   target="_blank" rel="noopener noreferrer">
+                  Bicycle facility cost report (PDF)
+                </a>
+              </li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Local Context &amp; Links</h3>
+            <h3>Local Context &amp; Data Sources</h3>
             <ul class="placeholder">
-
+              <li>
+                San Luis Obispo County Bicycle Crash Map
+                <br />
+                <a href="http://bikecrashmapper.jeffbarrera.com/counties/san-luis-obispo/"
+                   target="_blank" rel="noopener noreferrer">
+                  Bike Crash Mapper – SLO County
+                </a>
+              </li>
+              <li>
+                Cal Poly Budget &amp; Transportation/parking revenues
+                <br />
+                <a href="https://afd.calpoly.edu/budget/docs/fy2024-25-budget-book.pdf"
+                   target="_blank" rel="noopener noreferrer">
+                  Cal Poly Budget Book (FY 2024–25)
+                </a>
+              </li>
+              <li>
+                Salary and labor cost estimates used for construction comparisons:
+                <br />
+                <a href="https://www.ziprecruiter.com/Salaries/Construction-Salary-in-San-Luis-Obispo,CA"
+                   target="_blank" rel="noopener noreferrer">
+                  Construction salaries – San Luis Obispo
+                </a>
+                <br />
+                <a href="https://www.ziprecruiter.com/Salaries/Construction-Worker-Salary-in-Portland,OR"
+                   target="_blank" rel="noopener noreferrer">
+                  Construction salaries – Portland, OR
+                </a>
+              </li>
+              <li>
+                Bicycle law enforcement perspective:
+                <br />
+                <a href="https://ipmba.org/blog/comments/the-case-for-bicycle-enforcement"
+                   target="_blank" rel="noopener noreferrer">
+                  “The Case for Bicycle Enforcement” – IPMBA
+                </a>
+              </li>
             </ul>
           </div>
-
         </div>
       </section>
     </main>
@@ -48,6 +117,33 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const topBar = document.querySelector('.top-bar');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        function onScroll() {
+          if (window.scrollY > 10) {
+            topBar.classList.add('scrolled');
+          } else {
+            topBar.classList.remove('scrolled');
+          }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        if (navToggle) {
+          navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open');
+          });
+        }
+      });
+    </script>
+
     <script src="particles-attract.js"></script>
   </body>
 </html>
