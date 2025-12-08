@@ -32,6 +32,7 @@
     <main>
       <section>
         <h1>Further Research &amp; References</h1>
+
         <p class="placeholder">
           This section gathers the key studies, data sources, and local documents that inform the
           proposal. These references can help policymakers, students, and community members explore
@@ -140,27 +141,28 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project
     </footer>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const topBar = document.querySelector('.top-bar');
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+      document.addEventListener("DOMContentLoaded", function () {
+        const topBar = document.querySelector(".top-bar");
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
         function onScroll() {
           if (window.scrollY > 10) {
-            topBar.classList.add('scrolled');
+            topBar.classList.add("scrolled");
           } else {
-            topBar.classList.remove('scrolled');
+            topBar.classList.remove("scrolled");
           }
         }
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener("scroll", onScroll);
         onScroll();
 
         if (navToggle) {
-          navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('open');
-            navToggle.classList.toggle('open');
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("open");
+            navToggle.classList.toggle("open");
           });
         }
       });

@@ -53,6 +53,11 @@
               protected, two-way bikeway would organize movement and reduce conflicts in these
               hotspots.
             </p>
+            <img
+              src="protected-bike-lane.png"
+              alt="Cyclists riding on a separated green bike lane."
+              class="inline-img"
+            />
           </div>
 
           <div class="card">
@@ -76,6 +81,11 @@
               in crash and near-miss data. The long-term vision is a connected “bicycle highway”
               system that links neighborhoods directly to campus and downtown.
             </p>
+            <img
+              src="bikes-scooter-close.png"
+              alt="Crowded bike racks and a scooter near a campus path."
+              class="inline-img"
+            />
           </div>
 
           <div class="card">
@@ -98,7 +108,7 @@
               bike networks. Benefits include improved mobility, increased physical activity, health-care
               savings, fewer crashes, reduced congestion and pollution, and better neighborhood
               livability. Even modest projects, like a $170,000 protected path, can pay off over time when
-              these wider impacts are considered.  
+              these wider impacts are considered.
             </p>
           </div>
         </div>
@@ -132,27 +142,28 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project
     </footer>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const topBar = document.querySelector('.top-bar');
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+      document.addEventListener("DOMContentLoaded", function () {
+        const topBar = document.querySelector(".top-bar");
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
         function onScroll() {
           if (window.scrollY > 10) {
-            topBar.classList.add('scrolled');
+            topBar.classList.add("scrolled");
           } else {
-            topBar.classList.remove('scrolled');
+            topBar.classList.remove("scrolled");
           }
         }
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener("scroll", onScroll);
         onScroll();
 
         if (navToggle) {
-          navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('open');
-            navToggle.classList.toggle('open');
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("open");
+            navToggle.classList.toggle("open");
           });
         }
       });

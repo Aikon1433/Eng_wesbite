@@ -10,8 +10,7 @@ body {
 }
 
 body {
-  /* Height of header (~70px) + extra spacing */
-  padding-top: 110px;
+  padding-top: 110px; /* space for fixed header */
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #e6f0ff 0%, #fdfdfd 100%);
   color: #2f2f2f;
@@ -35,15 +34,8 @@ section {
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   max-width: 1000px;
-
-  /* keep sections visually under the nav bar */
   position: relative;
   z-index: 1;
-}
-
-/* remove the lift-on-hover that could push sections into the header */
-section:hover {
-  transform: none;
 }
 
 section h2 {
@@ -69,7 +61,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999 !important; /* Make sure header is above everything */
+  z-index: 9999;
 }
 
 .top-bar {
@@ -78,22 +70,20 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* flex wrapper for nav */
 .nav-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: center; /* center nav links */
+  justify-content: center;
 }
 
-/* hide the old logo completely */
+/* hide logo text */
 .nav-logo {
-  display: none !important;
+  display: none;
 }
 
-/* desktop menu */
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -124,7 +114,7 @@ header {
   border: 2px solid #2f2f2f;
 }
 
-/* hamburger (if you decide to use it on small screens) */
+/* mobile nav toggle */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -171,6 +161,62 @@ header {
   font-weight: 600;
 }
 
+/* ====== Word count display ====== */
+.word-count {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  text-align: right;
+}
+
+/* ====== Charts ====== */
+.chart-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 12px;
+  border-radius: 10px;
+}
+
+.chart-card h3 {
+  margin-bottom: 10px;
+}
+
+/* ====== Inline / floated images ====== */
+.inline-img {
+  width: 100%;
+  max-width: 650px;      /* smaller max width: prevents blurring */
+  aspect-ratio: 16 / 9;  /* keeps a nice rectangle shape */
+  object-fit: cover;     /* crops edges instead of stretching */
+  display: block;
+  margin: 25px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.float-img-right {
+  width: 40%;
+  max-width: 360px;
+  float: right;
+  margin: 10px 0 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.float-img-left {
+  width: 40%;
+  max-width: 360px;
+  float: left;
+  margin: 10px 20px 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.clearfix {
+  clear: both;
+  margin-bottom: 20px;
+}
+
 /* ====== Footer ====== */
 footer {
   background: #202020;
@@ -182,14 +228,23 @@ footer {
   letter-spacing: 0.5px;
 }
 
-footer span {
-  color: #6ea8fe;
-}
-
 /* ====== Responsive Design ====== */
 @media (max-width: 900px) {
   .list {
     grid-template-columns: 1fr;
+  }
+
+  .float-img-left,
+  .float-img-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .clearfix {
+    margin-bottom: 10px;
   }
 }
 
@@ -227,7 +282,7 @@ footer span {
   }
 }
 
-/* ===== Sparkle / custom cursor from previous CSS (if still used) ===== */
+/* ===== Sparkle Trail Effect (from previous custom cursor) ===== */
 .sparkle {
   position: fixed;
   pointer-events: none;
@@ -253,28 +308,3 @@ footer span {
     opacity: 0;
   }
 }
-
-/* Force the header/top bar to stay fixed above the content & particles */
-body > header,
-header,
-.top-bar {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99999 !important;
-}
-
-/* Make sure the rest of the page starts below the bar */
-body {
-  padding-top: 90px; /* adjust if bar is taller/shorter */
-}
-
-/* ====== Word count display ====== */
-.word-count {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #777;
-  text-align: right;
-}
-

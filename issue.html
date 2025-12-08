@@ -43,6 +43,12 @@
           dooring, and visibility problems, especially where there is no physical separation from cars.
         </p>
 
+        <img
+          src="bike-against-wall.jpg"
+          alt="Bicycles leaned against a low wall."
+          class="float-img-right"
+        />
+
         <p class="placeholder">
           On campus, these problems are magnified. Areas around Kennedy Library, Dexter Lawn, the
           University Union, and main campus entrances funnel huge numbers of riders and pedestrians
@@ -51,17 +57,53 @@
           between people walking and cycling.
         </p>
 
+        <div class="clearfix"></div>
+
         <h2>What Our Survey and Data Show</h2>
         <p class="placeholder">
-          In a recent questionnaire, 80% of cyclists reported at least one near collision with a pedestrian
-          in the past year, and 60% of pedestrians reported near-miss incidents with bikes. Official
-          police crash reports tell a different story, with far fewer incidents recorded. The gap between
-          lived experience and reported crashes suggests that many dangerous events are invisible to
-          policymakers and engineers, even though they strongly affect how safe people feel using
-          these routes.
+          In our survey, both cyclists and pedestrians reported frequent near-miss incidents that never
+          appear in official crash statistics. These close calls help reveal where people feel unsafe and
+          where conflicts occur most often.
         </p>
 
+        <div class="list">
+          <div class="card chart-card">
+            <h3>Near Miss Collisions with Motor Vehicles (Cyclists)</h3>
+            <p class="placeholder">
+              One out of three surveyed cyclists reported experiencing a near-miss collision with a car.
+              This highlights how painted bike lanes on major roads fail to provide the protection riders
+              need.
+            </p>
+            <img
+              src="chart-motor.png"
+              class="chart-img"
+              alt="Pie chart showing near-miss collisions between cyclists and motor vehicles."
+            />
+          </div>
+
+          <div class="card chart-card">
+            <h3>Near Miss Collisions with Bicycles (Pedestrians)</h3>
+            <p class="placeholder">
+              Pedestrians frequently encounter conflicts with cyclists on crowded walkways. In our
+              survey, 60% reported at least one near-miss with a bicycle while walking in San Luis
+              Obispo.
+            </p>
+            <img
+              src="chart-bicycle.png"
+              class="chart-img"
+              alt="Pie chart showing near-miss collisions between pedestrians and bicycles."
+            />
+          </div>
+        </div>
+
         <h2>Social Justice &amp; Equity</h2>
+
+        <img
+          src="bike-race.jpg"
+          alt="Cyclist riding along a path surrounded by trees."
+          class="float-img-left"
+        />
+
         <p class="placeholder">
           Bicycles are one of the most affordable and accessible forms of transportation available to
           students. Many cannot afford a car, fuel, insurance, and parking, so they rely on bikes to get
@@ -76,6 +118,36 @@
           greater hazards when they have to anticipate sudden interactions with cyclists. Safer,
           separated spaces are essential for an inclusive campus environment.
         </p>
+
+        <div class="clearfix"></div>
+
+        <div class="list">
+          <div class="card chart-card">
+            <h3>Pedestrian Satisfaction with Bike Infrastructure</h3>
+            <p class="placeholder">
+              Many pedestrians reported dissatisfaction or only moderate satisfaction with current bike
+              infrastructure, especially when bike lanes force riders and walkers into shared spaces.
+            </p>
+            <img
+              src="chart-infrastructure.png"
+              class="chart-img"
+              alt="Pie chart showing satisfaction with bicycle infrastructure."
+            />
+          </div>
+
+          <div class="card chart-card">
+            <h3>Pedestrian Satisfaction with Bicycle Parking</h3>
+            <p class="placeholder">
+              Responses show mixed satisfaction with where bike parking is located. Poor placement can
+              obstruct walkways or cluster bikes in high-traffic pedestrian zones.
+            </p>
+            <img
+              src="chart-parking.png"
+              class="chart-img"
+              alt="Pie chart showing satisfaction with bicycle parking placement."
+            />
+          </div>
+        </div>
 
         <h2>Why Change Is Necessary</h2>
         <p class="placeholder">
@@ -118,27 +190,28 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project
     </footer>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const topBar = document.querySelector('.top-bar');
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+      document.addEventListener("DOMContentLoaded", function () {
+        const topBar = document.querySelector(".top-bar");
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
         function onScroll() {
           if (window.scrollY > 10) {
-            topBar.classList.add('scrolled');
+            topBar.classList.add("scrolled");
           } else {
-            topBar.classList.remove('scrolled');
+            topBar.classList.remove("scrolled");
           }
         }
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener("scroll", onScroll);
         onScroll();
 
         if (navToggle) {
-          navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('open');
-            navToggle.classList.toggle('open');
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("open");
+            navToggle.classList.toggle("open");
           });
         }
       });

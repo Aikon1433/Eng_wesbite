@@ -50,6 +50,12 @@
           Denmark, and Germany, where protected lanes and separated paths are standard.
         </p>
 
+        <img
+          src="bikes-rack-long.png"
+          alt="Long row of bicycles parked along a campus walkway."
+          class="inline-img"
+        />
+
         <p class="placeholder">
           San Luis Obispo reflects these broader trends. In 2014, the city reported an unusually
           high rate of bicycle collisions for its size, and many more minor crashes and close calls
@@ -57,6 +63,12 @@
           infrastructure in SLO is not just a lifestyle choice—it is a matter of safety, equity, and
           accessibility for everyone who depends on affordable, sustainable transportation.
         </p>
+
+        <img
+          src="protected-bike-lane.png"
+          alt="Cyclists riding in a green separated bike lane next to pedestrians."
+          class="inline-img"
+        />
 
         <div class="list">
           <div class="card">
@@ -83,6 +95,12 @@
           </div>
         </div>
 
+        <img
+          src="bikes-and-pedestrians.png"
+          alt="Bikes parked along a busy walkway with many students walking by."
+          class="inline-img"
+        />
+
         <p class="placeholder">
           While this site focuses on one university town, the patterns it describes can be seen in
           many other communities that are trying to balance growth, housing demand, and changing
@@ -107,6 +125,12 @@
           evidence when considering new projects.
         </p>
 
+        <img
+          src="bike-event.jpg"
+          alt="Crowded community bike event with rows of parked bikes."
+          class="inline-img"
+        />
+
         <p class="word-count">Word count: 621</p>
       </section>
     </main>
@@ -114,27 +138,28 @@
     <footer>
       © 2025 SLO Bike Infrastructure Project | Designed for Cal Poly Proposal
     </footer>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const topBar = document.querySelector('.top-bar');
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+      document.addEventListener("DOMContentLoaded", function () {
+        const topBar = document.querySelector(".top-bar");
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
         function onScroll() {
           if (window.scrollY > 10) {
-            topBar.classList.add('scrolled');
+            topBar.classList.add("scrolled");
           } else {
-            topBar.classList.remove('scrolled');
+            topBar.classList.remove("scrolled");
           }
         }
 
-        window.addEventListener('scroll', onScroll);
+        window.addEventListener("scroll", onScroll);
         onScroll();
 
         if (navToggle) {
-          navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('open');
-            navToggle.classList.toggle('open');
+          navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("open");
+            navToggle.classList.toggle("open");
           });
         }
       });
