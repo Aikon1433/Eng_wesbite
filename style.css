@@ -40,7 +40,7 @@ section {
 
 section h2 {
   font-size: 26px;
-  margin: 0 0 14px;
+  margin: 30px 0 14px;
   font-weight: 600;
   color: #1a1a1a;
   border-bottom: 2px solid #3b6df2;
@@ -185,9 +185,9 @@ header {
 /* ====== Inline / floated images ====== */
 .inline-img {
   width: 100%;
-  max-width: 650px;      /* smaller max width: prevents blurring */
-  aspect-ratio: 16 / 9;  /* keeps a nice rectangle shape */
-  object-fit: cover;     /* crops edges instead of stretching */
+  max-width: 650px;      /* smaller and less blurry */
+  aspect-ratio: 16 / 9;  /* nice wide rectangle */
+  object-fit: cover;     /* crop instead of stretch */
   display: block;
   margin: 25px auto;
   border-radius: 10px;
@@ -282,7 +282,7 @@ footer {
   }
 }
 
-/* ===== Sparkle Trail Effect (from previous custom cursor) ===== */
+/* ===== Sparkle Trail Effect (if used) ===== */
 .sparkle {
   position: fixed;
   pointer-events: none;
